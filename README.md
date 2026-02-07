@@ -1,0 +1,1 @@
+# test_task_daniel_volostnov_compiler_optimization
