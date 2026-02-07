@@ -63,6 +63,9 @@ fun solve(input_data: String): HashMap<Int, HashSet<Int>> {
     for (station_id in 0..<S) {
         if (reachable_station[station_id]) {
             val cargo_to_update = station_cargo_types[station_id].second
+            if (possible_cargo_types_arrival[station_id].contains(cargo_to_update)) {
+                continue
+            }
             update_cargo_arrival_stations(station_connection, possible_cargo_types_arrival, terminal_stations[cargo_to_update] ?: HashSet(), station_id, cargo_to_update)
         }
     }
