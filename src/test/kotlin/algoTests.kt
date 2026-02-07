@@ -1,5 +1,5 @@
-import org.junit.jupiter.api.Test
 import kotlin.test.*
+import kotlin.test.Test
 
 class algoTests {
     @Test
@@ -120,6 +120,21 @@ class algoTests {
         val expected_result = HashMap<Int, HashSet<Int>>()
         expected_result.getOrPut(2){ HashSet() }.add(20)
         expected_result.getOrPut(3){ HashSet() }.add(30)
+        val real_result = simulate_handle_input(testData)
+        assertEquals(expected_result, real_result)
+    }
+    @Test
+    fun handle_case2() {
+        val testData = "3 2\n" +
+                "1 0 5\n" +
+                "2 0 5\n" +
+                "3 0 0\n" +
+                "1 2\n" +
+                "2 3\n" +
+                "1"
+        val expected_result = HashMap<Int, HashSet<Int>>()
+        expected_result.getOrPut(2){ HashSet() }.add(5)
+        expected_result.getOrPut(3){ HashSet() }.add(5)
         val real_result = simulate_handle_input(testData)
         assertEquals(expected_result, real_result)
     }
